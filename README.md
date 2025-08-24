@@ -1,0 +1,1 @@
+A GPT wrapper - works as a life coach - having access to your emails, calneder etc. Each user has a postgresSQL database entry with custom memory. THe GPT will talk to the person and update there databse as needed 
