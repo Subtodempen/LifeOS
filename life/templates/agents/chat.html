@@ -2,7 +2,7 @@
 
 <html>
     <link rel="stylesheet" href="{% static 'chatTemplate.css' %}">
-<title>CHATGPT</title>
+    <title>CHATGPT</title>
 
 <body>
     <div class = "nav">
@@ -10,15 +10,27 @@
     </div>
 
     <section class ="main">
-            <h3> ChatGPT</h3>
-            <p id = "output"> </p>
-
+        <h3> Life Help</h3>        
+        <div id = "modules">
+            <div class="email" id="box">
+                <a id="boxText" href="/Settings/Email">Email</a>
+            </div>
+            <div class="calender" id="box">
+                <a id="boxText" href="/Settings/Calender">Calender</a>
+            </div>
+        </div>
+        {{ message }}
         <div class = "bottom-section">
             <div class ="input-container">
-                <input placeholder = "enter text "/>
-                <div id = "submit">➢</div>
+                <form action="/chat/prompt" method="post">
+                    {% csrf_token %}
+                    <label for="prompt"> </label>
+                    <input type="text" name="prompt">
+                    <input id="submit" type="submit" value="OK">
+                </form>
             </div>
         </div>
 
     </section>
 </body>
+
